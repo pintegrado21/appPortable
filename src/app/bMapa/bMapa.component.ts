@@ -22,15 +22,6 @@ export class bMapaComponent implements OnInit {
 
   getIni() {}
 
-  getAiresApi() {
-    this.aireService.getAiresApi().subscribe(fechas => {
-      this.fechasApi = fechas;
-      this.fechas = this.fechasApi;
-      localStorage.setItem("airesFilter", JSON.stringify(this.fechasApi))
-      this.router.navigate(['/mapa2']);
-    })
-  }
-
   getFechaApi2(
     fecha2: string,
     cont2: string

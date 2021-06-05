@@ -24,20 +24,24 @@
 	<br>
 	<table class="fechas">
 		<tr>
-			<th>Fecha</th>
+			<th>Hora</th>
 			<th>O3</th>
 			<th>NO2</th>
 			<th>CO</th>
-			<th>Latitud</th>
-			<th>Longitud</th>
+			<th>Mapa</th>
 		</tr>
 		<tr *ngFor="let fecha of fechas; index as a">
-			<td>{{fecha.fecha | date:'hh:mm'}}</td>
+			<td>{{fecha.fecha | date:'HH:mm'}}</td>
 			<td>{{fecha.O3}}</td>
 			<td>{{fecha.NO2}}</td>
 			<td>{{fecha.CO}}</td>
-			<td>{{fecha.Latitud}}</td>
-			<td>{{fecha.Longitud}}</td>
+			<td>
+				<button (click)="getFechaApi3(
+					fecha.fecha
+				);
+				fecha.fecha = '';" class="button"
+				>O</button>
+			</td>
 		</tr>
 	</table>
 </div>

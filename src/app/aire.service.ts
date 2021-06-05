@@ -27,4 +27,9 @@ export class AireService {
     return this.http.get(url);
   }
 
+  getFechaApi3(ano: string, mes: string, dia: string, hora: string, min: string, seg: string) {
+    const url = `https://apiapp-portable.herokuapp.com/getFecha3/${ano}&${mes}&${dia}&${hora}&${min}&${seg}`;
+    return this.http.get(url);
+  }
+
 }
