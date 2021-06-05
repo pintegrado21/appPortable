@@ -49,9 +49,9 @@ export class FechaComponent implements OnInit {
     const dia: string = fecha.substr(8, 2).replace(/0?/, '');
     const mes: string = fecha.substr(5, 2).replace(/0?/, '');
     const ano: string = fecha.substr(0, 4);
-    const hora: string = fecha.substr(11, 2);
-    const min: string = fecha.substr(14, 2);
-    const seg: string = fecha.substr(17, 2);
+    const hora: string = fecha.substr(11, 2).replace(/0?/, '');
+    const min: string = fecha.substr(14, 2).replace(/0?/, '');
+    const seg: string = fecha.substr(17, 2).replace(/0?/, '');
     console.log(fecha, ano, mes, dia, hora, min, seg)
     this.fechaService.getFechaApi3( ano, mes, dia, hora, min, seg ).subscribe(fechas => {
       if(fechas == "") {
